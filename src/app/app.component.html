@@ -1,21 +1,21 @@
 <mat-toolbar color="primary">
   <div class="container d-flex">
-    <span routerLink="/" style="cursor: pointer;">Todo App</span>
+    <span routerLink="/" style="cursor: pointer;">Список дел</span>
     <span class="spacer"></span>
     <div class="d-flex justify-content-around icons" style="width: 100px;" *ngIf="showMenu">
       <div class="d-flex align-items-center mr-2 px-2">
-        <span routerLink="/login">Login</span>
+        <span routerLink="/login">Войти</span>
         <mat-icon routerLink="/login">login</mat-icon>
       </div>
       |
       <div class="d-flex align-items-center ml-2 px-2">
-        <span routerLink="/register">Register</span>
+        <span routerLink="/register">Регистрация</span>
         <mat-icon routerLink="/register">how_to_reg</mat-icon>
       </div>
     </div>
     <div class="d-flex justify-content-around align-items-center icons" style="width: 100px;" *ngIf="!showMenu">
       <div class="px-2">
-        <h3>Welcome, {{ username | titlecase }}</h3>
+        <h3>Здравствуйте, {{ username | titlecase }}</h3>
       </div>
       <mat-icon (click)="logout()">logout</mat-icon>
     </div>

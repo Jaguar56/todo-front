@@ -66,7 +66,7 @@ export class HomeComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   delete(id: number) {
-    if (confirm('Do you want to remove the Todo?')) {
+    if (confirm('Вы хотите удалить дело?')) {
       this.apiService.deleteTodo(id).subscribe((res) => {
         // @ts-ignore
         if (res.success) {

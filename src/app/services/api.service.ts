@@ -48,7 +48,7 @@ export class ApiService {
 
           if (this.token) {
             this.toast
-              .success('Login successful, redirecting now...', '', {
+              .success('Вход в систему успешен, перенаправляю...', '', {
                 timeOut: 700,
                 positionClass: 'toast-top-center',
               })
@@ -61,10 +61,14 @@ export class ApiService {
           }
         },
         (err: HttpErrorResponse) => {
-          this.toast.error('Authentication failed, try again', '', {
-            timeOut: 1000,
-            positionClass: 'toast-top-center',
-          });
+          this.toast.error(
+            'Aаутентификация не удалась, повторите попытку',
+            '',
+            {
+              timeOut: 1000,
+              positionClass: 'toast-top-center',
+            }
+          );
         }
       );
   }
@@ -87,7 +91,7 @@ export class ApiService {
     this.token = '';
     this.jwtToken$.next(this.token);
     this.toast
-      .success('Logged out succesfully', '', {
+      .success('Успешно', '', {
         timeOut: 500,
       })
       .onHidden.subscribe(() => {
@@ -123,7 +127,7 @@ export class ApiService {
       .pipe(
         tap((res) => {
           if (res) {
-            this.toast.success('Status updated successfully', '', {
+            this.toast.success('Статус успешно обновлен', '', {
               timeOut: 1000,
             });
           }
@@ -142,7 +146,7 @@ export class ApiService {
         tap((res) => {
           // @ts-ignore
           if (res.success) {
-            this.toast.success('Todo deleted successfully');
+            this.toast.success('Дело успешно удалено!');
           }
         })
       );
@@ -174,7 +178,7 @@ export class ApiService {
         // @ts-ignore
         localStorage.removeItem('act');
         this.toast.info(
-          'Session not valid, please login again',
+          'Сеанс недействителен, пожалуйста, войдите еще раз',
           'Token Failure',
           {
             timeOut: 2000,
